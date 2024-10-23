@@ -1,0 +1,86 @@
+# Configurar stacks iniciales para 6 jugadores
+SET R0, 1000
+SET R1, 1000
+SET R2, 1000
+SET R3, 1000
+SET R4, 1000
+SET R5, 1000
+# Comienza el Preflop
+SET R0 1000  # P1 tiene 1000 fichas
+SET R1 1000  # P2 tiene 1000 fichas
+SET R2 1000  # P3 tiene 1000 fichas
+SET R3 1000  # P4 tiene 1000 fichas
+SET R4 1000  # P5 tiene 1000 fichas
+SET R5 1000  # P6 tiene 1000 fichas
+SET SB 10    # Ciega pequeña es de 10 fichas
+SET BB 20    # Ciega grande es de 20 fichas
+
+# P1 apuesta 50 fichas preflop
+BET R0 50
+# P2 resube a 100 fichas
+BET R1 100
+# P3 hace fold
+FOLD R2
+# P4 iguala la apuesta de 100 fichas
+BET R3 100
+# P5 resube a 200 fichas
+BET R4 200
+# P6 hace fold
+FOLD R5
+# P1 iguala la subida a 200 fichas
+BET R0 150  # Aumenta 150 fichas para igualar la subida a 200
+# P2 hace fold
+FOLD R1
+# P4 iguala la subida a 200 fichas
+BET R3 100  # Aumenta 100 fichas para igualar la subida
+
+# Fin de la ronda Preflop, se recogen las apuestas
+ENDROUND
+
+# Pasamos al Flop
+NEXTROUND
+# Se revela el Flop: cartas comunitarias
+# Turno de P4 para hablar primero en el flop
+
+# P4 apuesta 100 fichas
+BET R3 100
+# P5 iguala la apuesta
+BET R4 100
+# P1 resube a 300 fichas
+BET R0 300
+# P4 iguala la resubida
+BET R3 200  # Aumenta 200 fichas para igualar la subida
+# P5 hace fold
+FOLD R4
+
+# Fin de la ronda Flop, se recogen las apuestas
+ENDROUND
+
+# Pasamos al Turn
+NEXTROUND
+# Se revela el Turn: carta comunitaria adicional
+
+# P4 apuesta 400 fichas
+BET R3 400
+# P1 iguala la apuesta
+BET R0 400
+
+# Fin de la ronda Turn, se recogen las apuestas
+ENDROUND
+
+# Pasamos al River
+NEXTROUND
+# Se revela el River: última carta comunitaria
+
+# P4 hace check
+CHECK R3
+# P1 apuesta 500 fichas
+BET R0 500
+# P4 hace fold
+FOLD R3
+
+# Fin de la ronda River, se recogen las apuestas y termina la partida
+ENDROUND
+
+# La partida ha finalizado
+
