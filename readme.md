@@ -41,3 +41,36 @@ def __init__(self):
     self.ronda = 0  # Ronda actual (0: Preflop, 1: Flop, 2: Turn, 3: River).
     self.ronda_completada = False  # Indica si la ronda actual ha sido completada.
 ```
+## Comandos del archivo de instrucciones
+
+- `SET R<i> <cantidad>`: Establece el stack del jugador `i` con la cantidad especificada.
+- `SET SB <cantidad>`: Establece el valor de la ciega pequeña.
+- `SET BB <cantidad>`: Establece el valor de la ciega grande.
+- `BET R<i> <cantidad>`: El jugador `i` realiza una apuesta con la cantidad especificada.
+- `CHECK R<i>`: El jugador `i` hace check (pasa sin apostar).
+- `FOLD R<i>`: El jugador `i` se retira (fold).
+- `ENDROUND`: Finaliza la ronda y mueve las apuestas al bote.
+- `NEXTROUND`: Avanza a la siguiente ronda si la actual está completada.
+
+## Ejemplo de archivo de instrucciones (`ronda.txt`)
+
+```txt
+# Configurar stacks iniciales
+SET R0 1000
+SET R1 1000
+SET R2 1000
+
+# Configurar ciegas
+SET SB 10
+SET BB 20
+
+# Jugadores apuestan
+BET R0 20
+BET R1 50
+CHECK R2
+
+# Finalizar ronda
+ENDROUND
+
+# Avanzar a la siguiente ronda
+NEXTROUND
