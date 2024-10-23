@@ -10,7 +10,7 @@ El proyecto consta de una sola clase principal: `TexasHoldemVM`. Esta clase mane
 
 ### Diagrama del Flujo de Juego
 
-![Diagrama del Flujo de Juego](ruta/a/diagrama.png)
+![Diagrama del Flujo de Juego]("C:/Users/nacho/Downloads/diagrama.jpeg")
 
 ### Atributos de la Clase `TexasHoldemVM`
 
